@@ -106,10 +106,10 @@ __webpack_require__.r(__webpack_exports__);
 var publicUrl = location.pathname || '/'; // SEE: https://stackoverflow.com/a/22242528/9998350
 
 var isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > -1;
-var FILES = [publicUrl + 'images/100.jpeg', publicUrl + 'images/200.jpeg', publicUrl + 'images/300.jpeg']; // Because IE11 cannot force-download for images(.jpeg)
+var FILES = [publicUrl + 'images/100.jpeg', publicUrl + 'images/200.jpeg', publicUrl + 'images/300.jpeg']; // Because IE11 cannot force-download images(.jpeg)
 
 if (isIE) {
-  FILES = [publicUrl + 'pdfs/100.pdf', publicUrl + 'pdfs/200.pdf', publicUrl + 'pdfs/300.pdf'];
+  FILES = [publicUrl + 'zips/100.zip', publicUrl + 'zips/200.zip', publicUrl + 'zips/300.zip'];
 }
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
