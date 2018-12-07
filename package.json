@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:docs": "poi docs/index.js --public-url /play-with-downloader/",
-    "servep": "poi docs/index.js && cd dist && serve",
+    "servep": "poi docs/index.js && cd dist && PORT=5000 node ../docs/serve.js",
     "serve": "poi docs/index.js --serve -p 4001",
     "deploy": "npm run build:docs && gh-pages -d dist"
   },
@@ -24,7 +24,8 @@
     "gh-pages": "^2.0.1",
     "jquery": "^3.3.1",
     "poi": "^12.0.0-beta.8",
-    "serve": "^10.1.1"
+    "serve": "^10.1.1",
+    "serve-handler": "^5.0.7"
   },
   "dependencies": {
     "bluebird": "^3.5.3",
