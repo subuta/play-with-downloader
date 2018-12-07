@@ -4,7 +4,10 @@
   "description": "Seeking a way for download multiple file at once.",
   "main": "index.js",
   "scripts": {
-    "serve": "poi --serve -p 4001"
+    "build": "poi docs/index.js",
+    "servep": "cd dist && serve",
+    "serve": "poi docs/index.js --serve -p 4001",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,18 @@
   },
   "homepage": "https://github.com/subuta/play-with-downloader#readme",
   "devDependencies": {
-    "poi": "^12.0.0-beta.8"
+    "gh-pages": "^2.0.1",
+    "poi": "^12.0.0-beta.8",
+    "serve": "^10.1.1",
+    "jquery": "^3.3.1"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "bluebird": "^3.5.3",
+    "file-saver": "^2.0.0",
+    "jszip": "^3.1.5",
+    "jszip-utils": "0.0.2",
+    "lodash": "^4.17.11",
+    "multi-download": "^2.0.1",
+    "unfetch": "^4.0.1"
   }
 }
