@@ -13,12 +13,12 @@ let FILES = [
   publicUrl + 'images/300.jpeg'
 ]
 
-// Because IE11 cannot force-download for images(.jpeg)
+// Because IE11 cannot force-download images(.jpeg)
 if (isIE) {
   FILES = [
-    publicUrl + 'pdfs/100.pdf',
-    publicUrl + 'pdfs/200.pdf',
-    publicUrl + 'pdfs/300.pdf',
+    publicUrl + 'zips/100.zip',
+    publicUrl + 'zips/200.zip',
+    publicUrl + 'zips/300.zip',
   ]
 }
 
