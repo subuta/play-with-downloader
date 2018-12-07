@@ -3,10 +3,12 @@ import _ from 'lodash'
 
 import downloader from '../lib/downloader'
 
+const publicUrl = location.pathname || '/'
+
 const FILES = [
-  '/images/100.jpeg',
-  '/images/200.jpeg',
-  '/images/300.jpeg'
+  publicUrl + 'images/100.jpeg',
+  publicUrl + 'images/200.jpeg',
+  publicUrl + 'images/300.jpeg'
 ]
 
 $(() => {
