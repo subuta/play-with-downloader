@@ -105,25 +105,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var publicUrl = location.pathname || '/'; // SEE: https://stackoverflow.com/a/22242528/9998350
 
-var isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > -1;
-var FILES = [publicUrl + 'images/100.jpeg', publicUrl + 'images/200.jpeg', publicUrl + 'images/300.jpeg']; // Because IE11 cannot force-download images(.jpeg)
+var isIE = lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEmpty(location.search) && (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > -1); // Defaults to jpeg.
 
-if (isIE) {
-  FILES = [publicUrl + 'zips/100.zip', publicUrl + 'zips/200.zip', publicUrl + 'zips/300.zip'];
+var files = [publicUrl + 'images/100.jpeg', publicUrl + 'images/200.jpeg', publicUrl + 'images/300.jpeg'];
+var type = 'jpeg'; // Because IE11 cannot force-download of images without content-disposition=attachment header.
+
+if (lodash__WEBPACK_IMPORTED_MODULE_1___default.a.includes(location.search, 'zip') || isIE) {
+  files = [publicUrl + 'zips/100.zip', publicUrl + 'zips/200.zip', publicUrl + 'zips/300.zip'];
+  type = 'zip'; // Force pdf download if pdf query specified.
+} else if (lodash__WEBPACK_IMPORTED_MODULE_1___default.a.includes(location.search, 'pdf')) {
+  files = [publicUrl + 'pdfs/100.pdf', publicUrl + 'pdfs/200.pdf', publicUrl + 'pdfs/300.pdf'];
+  type = 'pdf';
 }
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   var $button = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-single');
-  var $dsButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-separately');
+  var $daButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-all');
   var $dzButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-zip');
+  $button.text("Download single ".concat(type, " file"));
+  $daButton.text("Download all ".concat(type, " files"));
+  $dzButton.text("Compress and Download ".concat(type, " as ZIP"));
   $button.on('click', function () {
-    return _lib_downloader__WEBPACK_IMPORTED_MODULE_2__["default"].download(lodash__WEBPACK_IMPORTED_MODULE_1___default.a.first(FILES));
+    return _lib_downloader__WEBPACK_IMPORTED_MODULE_2__["default"].download(lodash__WEBPACK_IMPORTED_MODULE_1___default.a.first(files));
   });
-  $dsButton.on('click', function () {
-    return _lib_downloader__WEBPACK_IMPORTED_MODULE_2__["default"].download(FILES);
+  $daButton.on('click', function () {
+    return _lib_downloader__WEBPACK_IMPORTED_MODULE_2__["default"].download(files);
   });
   $dzButton.on('click', function () {
-    return _lib_downloader__WEBPACK_IMPORTED_MODULE_2__["default"].zip(FILES, 'images.zip');
+    return _lib_downloader__WEBPACK_IMPORTED_MODULE_2__["default"].zip(files, "".concat(type, ".zip"));
   });
 });
 
