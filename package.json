@@ -1,0 +1,26 @@
+{
+  "name": "play-with-downloader",
+  "version": "1.0.0",
+  "description": "Seeking a way for download multiple file at once.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "poi --serve -p 4001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subuta/play-with-downloader.git"
+  },
+  "keywords": [],
+  "author": "subuta <shunta.3110@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/subuta/play-with-downloader/issues"
+  },
+  "homepage": "https://github.com/subuta/play-with-downloader#readme",
+  "devDependencies": {
+    "poi": "^12.0.0-beta.8"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
