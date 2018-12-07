@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:docs": "poi docs/index.js --public-url /play-with-downloader/",
-    "servep": "npm run build:docs && cd dist && serve",
+    "servep": "poi docs/index.js && cd dist && serve",
     "serve": "poi docs/index.js --serve -p 4001",
     "deploy": "npm run build:docs && gh-pages -d dist"
   },
@@ -22,9 +22,9 @@
   "homepage": "https://github.com/subuta/play-with-downloader#readme",
   "devDependencies": {
     "gh-pages": "^2.0.1",
+    "jquery": "^3.3.1",
     "poi": "^12.0.0-beta.8",
-    "serve": "^10.1.1",
-    "jquery": "^3.3.1"
+    "serve": "^10.1.1"
   },
   "dependencies": {
     "bluebird": "^3.5.3",
@@ -33,6 +33,7 @@
     "jszip-utils": "0.0.2",
     "lodash": "^4.17.11",
     "multi-download": "^2.0.1",
+    "path-browserify": "^1.0.0",
     "unfetch": "^4.0.1"
   }
 }

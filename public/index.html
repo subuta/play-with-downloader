@@ -10,6 +10,8 @@
     <meta name="description" content="<%= pkg.description %>">
     <% } %>
 
+    <!-- Polyfill for IE11 :( -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 </head>
 <body>
 <noscript>
@@ -19,16 +21,22 @@
 <h3>play-with-downloader</h3>
 
 <div style="margin: 20px 0;">
-    <button id="download-single">Download single file</button><br/>
-    <button style="margin-top: 10px;" id="download-separately">Download separately</button><br/>
+    <button id="download-single">Download single file</button>
+    <br />
+    <button style="margin-top: 10px;" id="download-separately">Download separately</button>
+    <br />
     <button style="margin-top: 10px;" id="download-zip">Download as Zip</button>
 </div>
 
 <p>
-  Images from
-  <a href="https://unsplash.com/">unsplash</a>
-  and served at
-  <a href="http://picsum.photos/">Lorem Picsum</a>
+    Images from
+    <a href="https://unsplash.com/">unsplash</a>
+    and served at
+    <a href="http://picsum.photos/">Lorem Picsum</a>
+</p>
+
+<p>
+    <a href="https://github.com/subuta/play-with-downloader">Repo</a>
 </p>
 
 </body>
