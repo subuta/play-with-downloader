@@ -4,10 +4,10 @@
   "description": "Seeking a way for download multiple file at once.",
   "main": "index.js",
   "scripts": {
-    "build": "poi docs/index.js",
-    "servep": "cd dist && serve",
+    "build:docs": "poi docs/index.js --public-url /play-with-downloader/",
+    "servep": "npm run build:docs && cd dist && serve",
     "serve": "poi docs/index.js --serve -p 4001",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build:docs && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
