@@ -103,7 +103,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var FILES = ['/images/100.jpeg', '/images/200.jpeg', '/images/300.jpeg'];
+var publicUrl = location.pathname || '/';
+var FILES = [publicUrl + 'images/100.jpeg', publicUrl + 'images/200.jpeg', publicUrl + 'images/300.jpeg'];
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   var $button = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-single');
   var $dsButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-separately');
